@@ -1,5 +1,11 @@
 # TensorForce Bitcoin Trading Bot
 
+## Update 2018-08-14
+Tag v0.1 has the code which follows this README. Tag v0.2 is a major overhaul after lessons learned in a finance job, and much of this README won't match the new code. I can't get tests to converge in either case, so something is fundamentally missing from this project - ie, don't count on making money (use as a starting-point / education instead). I'm stepping away for a while and won't be very active here, but I'm not completely abandoning.
+
+---
+
+
 [![Join the chat at https://gitter.im/lefnire/tforce_btc_trader](https://badges.gitter.im/lefnire/tforce_btc_trader.svg)](https://gitter.im/lefnire/tforce_btc_trader?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A [TensorForce](https://github.com/reinforceio/tensorforce)-based Bitcoin trading bot (algo-trader). Uses deep reinforcement learning to automatically buy/sell/hold BTC based on price history.
@@ -22,9 +28,9 @@ Note: you'll wanna run this on a GPU rig with some RAM. I'm using a 1080ti and 1
 
 ### 2. Populate Data
 - Download [mczielinski/bitcoin-historical-data](https://www.kaggle.com/mczielinski/bitcoin-historical-data)
-- Extract to `data/populate/bitcoin-historical-data`
-- `python data/populate/kaggle.py`
+- Extract to `data/bitcoin-historical-data`
 - `python -c 'from data.data import setup_runs_table;setup_runs_table()'`
+  - if you get `ModuleNotFoundError: No module named 'data.data'`, prefix commands with `PYTHONPATH=. python ...`
   - If you have trouble with that, just copy/paste the SQL from that file, execute against your `hyper_runs` DB from above.
 
 ### 3. Hypersearch
